@@ -15,6 +15,7 @@ bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 .idea/shelf/
+.idea/workspace.xml
 
 ### NetBeans ###
 /nbproject/private/
