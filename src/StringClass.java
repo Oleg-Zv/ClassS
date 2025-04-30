@@ -34,31 +34,16 @@ public static void compEmail(String company){
         System.out.println("Email : " + matcher.group());
     }
 }
-public static boolean isPalindrom(String str){
-    str = str.replaceAll("[^a-zA-z0-9]", "").toLowerCase();
-    for (int i = 0; i < str.length()/2; i++) {
-        if (str.charAt(i) != str.charAt(str.length() - i - 1)) {
-            return false;
-        }
-    }
-        return true;
-
-}
 
 
     public static void main(String[] args) {
 try {
     String string = "abcdefg";
     int k = 3;
-    String palm = "madam";
     String companyEmail = "Компания по производству экспериментальных препаратов \"NZT48\"\n" +
             "наша почта: neoNzt@48company.com";
-
     System.out.println(formatStr(string, k));
-
     compEmail(companyEmail);
-
-    System.out.println(isPalindrom(palm));
 }catch (Exception e){
     System.out.println(e.getMessage());
 }
