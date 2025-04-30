@@ -1,5 +1,8 @@
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class StringClass {
 
@@ -35,9 +38,20 @@ public static void compEmail(String company){
     }
 }
 
+public static void counting(String s){
+  s=   s.toLowerCase();
+  Arrays.stream(s.split(" "))
+          .collect(Collectors.groupingBy(
+                  word->word,
+                  Collectors.counting()))
+          .forEach((word,count)->
+                  System.out.printf("%s-%d\n",word,count));
+}
 
     public static void main(String[] args) {
 try {
+    String see = "Корабль врезался в Корабль";
+   counting(see);
     String string = "abcdefg";
     int k = 3;
     String companyEmail = "Компания по производству экспериментальных препаратов \"NZT48\"\n" +
