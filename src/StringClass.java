@@ -1,5 +1,7 @@
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -48,8 +50,25 @@ public static void counting(String s){
                   System.out.printf("%s-%d\n",word,count));
 }
 
+public static int searchNum(int[]ar) {
+    Map<Integer, Integer> map = new HashMap<>();
+   int povtor = Integer.MIN_VALUE;
+    for (int i = 0; i <ar.length; i++) {
+        if (map.containsKey(ar[i])) {
+povtor = ar[i];
+return povtor;
+        }
+        map.put(ar[i], map.getOrDefault(ar[i], 0)+1);
+    }
+
+return povtor;
+}
+
+
     public static void main(String[] args) {
 try {
+    int[]arrray = {2,1,2,3,3};
+    System.out.println("Первое повторяющееся число: " + searchNum(arrray));
     String see = "Корабль врезался в Корабль";
    counting(see);
     String string = "abcdefg";
