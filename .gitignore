@@ -16,6 +16,8 @@ bin/
 !**/src/test/**/bin/
 .idea/shelf/
 .idea/workspace.xml
+.idea/uiDesigner.xml
+
 
 ### NetBeans ###
 /nbproject/private/
