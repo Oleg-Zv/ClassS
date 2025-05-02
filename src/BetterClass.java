@@ -1,12 +1,11 @@
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-public class StringClass {
+public class BetterClass {
 
 public static String formatStr(String string, int k){
     String small= "";
