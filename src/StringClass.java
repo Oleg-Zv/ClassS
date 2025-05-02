@@ -39,7 +39,7 @@ public static void compEmail(String company){
         System.out.println("Email : " + matcher.group());
     }
 }
-
+//подсчет слов в строке
 public static void counting(String s){
   s=   s.toLowerCase();
   Arrays.stream(s.split(" "))
