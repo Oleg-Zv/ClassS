@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -63,10 +64,31 @@ return povtor;
 return povtor;
 }
 
+public static void calculateSomething(Scanner sc){
+    System.out.println("Калькулятор сложения!Введите \"число + число\"");
+String nums =sc.nextLine().trim();
+String[]parts = nums.split("\\+");
+
+    if (parts.length == 2) {
+       try{
+        int num1 = Integer.parseInt(parts[0].trim());
+        int num2 = Integer.parseInt(parts[1].trim());
+        System.out.println(num1 + num2);
+    }catch (NumberFormatException e ){
+           System.out.println(e.getMessage());
+       }
+}else {
+        System.out.println("Ошибка! неверный формат");
+    }
+    sc.close();
+}
+
 
     public static void main(String[] args) {
 try {
     int[]arrray = {2,1,2,3,3};
+    Scanner scanner = new Scanner(System.in);
+   ;calculateSomething(scanner);
     System.out.println("Первое повторяющееся число: " + searchNum(arrray));
     String see = "Корабль врезался в Корабль";
    counting(see);
