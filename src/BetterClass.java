@@ -50,46 +50,30 @@ public static void counting(String s){
                   System.out.printf("%s-%d\n",word,count));
 }
 
-public static int searchNum(int[]ar) {
-    Map<Integer, Integer> map = new HashMap<>();
-   int povtor = Integer.MIN_VALUE;
-    for (int i = 0; i <ar.length; i++) {
-        if (map.containsKey(ar[i])) {
-povtor = ar[i];
-return povtor;
-        }
-        map.put(ar[i], map.getOrDefault(ar[i], 0)+1);
-    }
-
-return povtor;
-}
-
-public static void calculateSomething(Scanner sc){
+public static void calculateSomething(Scanner sc) {
     System.out.println("Калькулятор сложения!Введите \"число + число\"");
-String nums =sc.nextLine().trim();
-String[]parts = nums.split("\\+");
+    String nums = sc.nextLine().trim();
+    String[] parts = nums.split("\\+");
 
     if (parts.length == 2) {
-       try{
-        int num1 = Integer.parseInt(parts[0].trim());
-        int num2 = Integer.parseInt(parts[1].trim());
-        System.out.println(num1 + num2);
-    }catch (NumberFormatException e ){
-           System.out.println(e.getMessage());
-       }
-}else {
+        try {
+            int num1 = Integer.parseInt(parts[0].trim());
+            int num2 = Integer.parseInt(parts[1].trim());
+            System.out.println(num1 + num2);
+        } catch (NumberFormatException e) {
+            System.out.println(e.getMessage());
+        }
+    } else {
         System.out.println("Ошибка! неверный формат");
     }
     sc.close();
 }
-
 
     public static void main(String[] args) {
 try {
     int[]arrray = {2,1,2,3,3};
     Scanner scanner = new Scanner(System.in);
    ;calculateSomething(scanner);
-    System.out.println("Первое повторяющееся число: " + searchNum(arrray));
     String see = "Корабль врезался в Корабль";
    counting(see);
     String string = "abcdefg";
