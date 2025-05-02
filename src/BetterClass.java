@@ -1,12 +1,12 @@
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-public class StringClass {
+public class BetterClass {
 
 public static String formatStr(String string, int k){
     String small= "";
@@ -50,25 +50,30 @@ public static void counting(String s){
                   System.out.printf("%s-%d\n",word,count));
 }
 
-public static int searchNum(int[]ar) {
-    Map<Integer, Integer> map = new HashMap<>();
-   int povtor = Integer.MIN_VALUE;
-    for (int i = 0; i <ar.length; i++) {
-        if (map.containsKey(ar[i])) {
-povtor = ar[i];
-return povtor;
+public static void calculateSomething(Scanner sc) {
+    System.out.println("Калькулятор сложения!Введите \"число + число\"");
+    String nums = sc.nextLine().trim();
+    String[] parts = nums.split("\\+");
+
+    if (parts.length == 2) {
+        try {
+            int num1 = Integer.parseInt(parts[0].trim());
+            int num2 = Integer.parseInt(parts[1].trim());
+            System.out.println(num1 + num2);
+        } catch (NumberFormatException e) {
+            System.out.println(e.getMessage());
         }
-        map.put(ar[i], map.getOrDefault(ar[i], 0)+1);
+    } else {
+        System.out.println("Ошибка! неверный формат");
     }
-
-return povtor;
+    sc.close();
 }
-
 
     public static void main(String[] args) {
 try {
     int[]arrray = {2,1,2,3,3};
-    System.out.println("Первое повторяющееся число: " + searchNum(arrray));
+    Scanner scanner = new Scanner(System.in);
+   ;calculateSomething(scanner);
     String see = "Корабль врезался в Корабль";
    counting(see);
     String string = "abcdefg";
