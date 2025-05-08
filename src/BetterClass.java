@@ -50,6 +50,23 @@ public class BetterClass {
                 .forEach((word, count) ->
                         System.out.printf("%s-%d\n", word, count));
     }
+    //Функция вычисления факториала
+    public static  int factorial(Scanner sc){
+        int num = sc.nextInt();
+        if(num<0){
+            throw new IllegalArgumentException("Факториал возможен только для положительных чисел!");
+        }
+        if(num==0){
+            return 1;
+        }
+        int fact=1;
+        for (int i = 1; i <=num; i++) {
+            fact*=i;
+        }
+        return fact;
+    }
+
+
 
     public static void calculateSomething(Scanner sc) {
         System.out.println("Калькулятор сложения!Введите \"число + число\"");
@@ -72,6 +89,11 @@ public class BetterClass {
 
     public static void main(String[] args) {
         try {
+          //для метода factorial
+            Scanner sc = new Scanner(System.in);
+            System.out.println(factorial(sc));
+
+
             //для метода calculateSomething
             Scanner scanner = new Scanner(System.in);
             calculateSomething(scanner);
