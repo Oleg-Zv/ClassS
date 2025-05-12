@@ -88,18 +88,9 @@ public class BetterClass {
     }
 
     public  static Integer binarySearch(int[]ar,int item){
-        for (int i = 0; i < ar.length-1; i++) {
-            for (int j = 0; j < ar.length-i-1; j++) {
-                if(ar[j]>ar[j+1]){
-                    int temp = ar[j];
-                    ar[j]= ar[j+1];
-                    ar[j+1] = temp;
-                }
-            }
-        }
-
+     Arrays.sort(ar);
        return Arrays.binarySearch(ar,item);
-
+//TODO Ready!!!)
     }
 
     public static void main(String[] args) {
