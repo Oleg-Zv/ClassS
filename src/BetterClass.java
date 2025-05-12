@@ -87,8 +87,28 @@ public class BetterClass {
         sc.close();
     }
 
+    public  static Integer binarySearch(int[]ar,int item){
+        for (int i = 0; i < ar.length-1; i++) {
+            for (int j = 0; j < ar.length-i-1; j++) {
+                if(ar[j]>ar[j+1]){
+                    int temp = ar[j];
+                    ar[j]= ar[j+1];
+                    ar[j+1] = temp;
+                }
+            }
+        }
+
+       return Arrays.binarySearch(ar,item);
+
+    }
+
     public static void main(String[] args) {
         try {
+         //для binarySearch
+            int[]ar = {0,2,-1,4,9};//-10249
+            System.out.println(binarySearch(ar, -1));
+
+
           //для метода factorial
             Scanner sc = new Scanner(System.in);
             System.out.println(factorial(sc));
